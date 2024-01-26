@@ -1,0 +1,6 @@
++======================================================================================+
+1/23/24 - Connected the MongoDB database, successfully runs a local server - AJOHNSON
+1/23/24 - Fetched data from the Spoonacular API. - AJOHNSON
+1/24/24 - implemented REACT in the project. - AJOHNSON
++======================================================================================+
+

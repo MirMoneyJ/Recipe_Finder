@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="../scripts/fetchRecipeScript.js"></script>
+    <script src="../scripts/complexSearchScript.js"></script>
+
+    <!-- Recipe ID Search Form -->
+    <div>
+        <label for="recipeId">Enter Recipe ID:</label>
+        <input type="text" id="recipeId" placeholder="Recipe ID">
+        <button onclick="fetchRecipeInfo()">Get Recipe Info</button>
+        <div id="recipeInfo"></div>
+    </div>
+
+    <!-- Complex Search Form -->
+    <div>
+        <h2>Complex Search</h2>
+        <label for="query">Query:</label>
+        <input type="text" id="query" placeholder="Search query">
+
+        <label for="cuisine">Cuisine:</label>
+        <input type="text" id="cuisine" placeholder="Cuisine">
+
+        <label for="intolerances">Intolerances:</label>
+        <input type="text" id="intolerances" placeholder="Intolerances">
+
+        <label for="diet">Diet:</label>
+        <input type="text" id="diet" placeholder="Diet">
+
+        <button onclick="performComplexSearch()">Search</button>
+        <div id="searchResults"></div>
+    </div>
+</body>
+</html>
