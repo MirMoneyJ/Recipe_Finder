@@ -3,7 +3,7 @@ List of dependencies needed to run this application
 - MongoDB
 - MongoDB Compass
 - Node.js
-+---------------------
+---------------------
 After installing the above, run these commands globally within the VSCode space.
 - npm install path
 - npm install express
