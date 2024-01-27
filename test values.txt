@@ -1,0 +1,6 @@
+Recipe ID: 716429
+
+Query: Pasta
+Cuisine: Italian
+Intolerances: Gluten
+Diet: Vegetarian
