@@ -7,3 +7,5 @@ List of dependencies needed to run this application
 - dotenv
 - mongoose
 - react
+- bcrypt
+- winston

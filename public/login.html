@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Recipe Finder</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="../scripts/loginScript.js"></script>
+
+</head>
+<body>
+    <div id="loginRoot"></div>
+
+    <!-- Login Form -->
+    <div>
+        <h2>Login</h2>
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" placeholder="Username">
+        
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" placeholder="Password">
+        
+        <button onclick="loginUser()">Login</button>
+    </div>
+
+    <!-- Forgot Password Link -->
+    <div>
+        <a href="../public/index.html">Back to Recipe Finder</a>
+        <a href="register.html">Register a new account</a>
+    </div>
+</body>
+</html>

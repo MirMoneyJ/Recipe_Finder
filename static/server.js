@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const fetchRecipeRoute = require('../routes/fetchRecipe');
 const complexSearchRoute = require('../routes/complexSearch');
+const authRoutes = require('../routes/auth');
 require('dotenv').config({ path: path.join(__dirname, '../key.env') }); // Load the value from key.env
 
 const app = express();
@@ -12,12 +13,21 @@ const DB_PATH = process.env.DB_PATH || 'mongodb://127.0.0.1:27017/SpoonacularAPI
 
 app.set('view engine', 'ejs');
 mongoose.connect(DB_PATH);
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+    console.log('Connected to MongoDB');
+});
+
+app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public'))); // Uses static file from public directory
 app.use(express.static(path.join(__dirname, '../scripts')));
 
 // Points to the routing scripts
 app.use('/fetchRecipe', fetchRecipeRoute);
 app.use('/complexSearch', complexSearchRoute);
+app.use('/auth', authRoutes);
 
 // Presents the fetchRecipe HTML scripts to the front-end
 app.get('/scripts/fetchRecipeScript.js', (req, res) => {
@@ -31,12 +41,33 @@ app.get('/scripts/complexSearchScript.js', (req, res) => {
     res.sendFile(path.join(__dirname, '../scripts/complexSearchScript.js'));
 });
 
+// Presents the loginScript to the front-end
+app.get('/scripts/loginScript.js', (req, res) => {
+    res.type('application/javascript');
+    res.sendFile(path.join(__dirname, '../scripts/loginScript.js'));
+});
+
+// Presents the registerScript to the front-end
+app.get('/scripts/registerScript.js', (req, res) => {
+    res.type('application/javascript');
+    res.sendFile(path.join(__dirname, '../scripts/registerScript.js'));
+});
+
 app.get('/', (req, res) => {
     // Render the main HTML file for the React app
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Internal Server Error');
+});
+
 //-----------------------------------------------------------------------------------------------------\\
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+

@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
         res.json(response.data); // Send response data
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error performing complex search'); // Sends a 500 error
+        res.status(500).send('Error performing complex search'); 
     }
 });
 
