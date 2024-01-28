@@ -1,7 +1,0 @@
-# Exclude log files
-*.log
-
-# Exclude txt files
-*.txt
-
-# NOTE: This file contains extensions that we don't want to push into github.
