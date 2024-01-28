@@ -63,6 +63,11 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/login.html'));
 });
 
+// Serve register.html for /register URL
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/register.html'));
+});
+
 // Global error handler
 app.use((err, req, res, next) => {
     console.error(err.stack);

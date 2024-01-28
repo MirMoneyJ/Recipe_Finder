@@ -1,0 +1,22 @@
+Make sure you can get into API and retrieve data
+
+Whats' the best way to share code live?
+
+jsonbin.io | NO SQL database
+
+Having a rating system. Rating the receipe.
+
+Create a json bin in jsonbin.io
+
+How to push code onto github.
+
+1. Go to root directory and run these
+    git rm --cached '*.txt'
+    git rm --cached '*.log'
+2. Run 'git status'
+3. Run 'git add .'
+4. run 'git commit -m "Your commit message here" '
+5. run 'git push origin master'
+
+
+

@@ -9,6 +9,11 @@ function registerUser() {
         return;
     }
 
+    if (!isComplexPassword(password)) {
+        alert("Password must contain at least one capital letter and one symbol");
+        return;
+    }
+
     try {
         fetch('/auth/register', {
             method: 'POST',
@@ -35,3 +40,20 @@ function registerUser() {
         alert('An error occurred while registering. Please try again.');
     }
 }
+
+function isComplexPassword(password) {
+    let hasCapitalLetters = false; 
+    let hasSymbol = false;
+
+    for(let i = 0; i < password.length; i++) {
+        const char = password[i];
+
+        if(char === char.toUpperCase() && char !== char.toLowerCase()) {
+            hasCapitalLetters = true;
+        } else if ("!@#$%^&*()_+-=[]{}|;:'\",.<>/?".includes(char)) {
+            hasSymbol = true;
+        }
+    }
+    return hasCapitalLetters && hasSymbol;
+}
+

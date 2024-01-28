@@ -23,38 +23,43 @@ const logger = winston.createLogger({
 function handleResponseAndLog(res, successMessage, errorMessage, logMessage) {
     if (successMessage) {
         res.status(200).send(successMessage);
-        logger.info(logMessage);
-    } else {
+    } else if (errorMessage) {
         res.status(400).send(errorMessage);
-        logger.info(logMessage);
     }
+
+    logger.info(logMessage);
 }
+
 
 router.post('/', async (req, res) => {
     const { username, password } = req.body;
     const timestamp = new Date();
 
     try {
-        const user = await User.findOne({ username });
+        if (!username || !password) {
+            handleResponseAndLog(res, null, 'Authentication failed', `Username or Password is NULL:\non ${timestamp}`);
+            return;
+        }
 
+        const user = await User.findOne({ username });
         if (!user) {
-            handleResponseAndLog(res, null, 'Authentication failed', `Unsuccessfully Login Attempt From User : ${username}\non ${timestamp}`);
+            handleResponseAndLog(res, null, 'Authentication failed', `User not found: ${username}\non ${timestamp}`);
             return;
         }
 
         const passwordMatch = await bcrypt.compare(password, user.password);
-
         if (passwordMatch) {
             handleResponseAndLog(res, { username: user.username }, null, `Successfully Login Attempt From User : ${username}\non ${timestamp}`);
         } else {
-            handleResponseAndLog(res, null, 'Authentication failed', `Unsuccessfully Login Attempt From User : ${username}\non ${timestamp}`);
+            handleResponseAndLog(res, null, 'Authentication failed', `Incorrect password for User: ${username}\non ${timestamp}`);
         }
+
     } catch (error) {
         console.error('Error during login:', error);
-        // Log the error
         logger.error(`Error during login: ${error.message} \nStack trace: ${error.stack} \non ${timestamp}`);
         res.status(500).send('Error during login');
     }
 });
+
 
 module.exports = router;
