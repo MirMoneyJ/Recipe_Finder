@@ -1,9 +1,0 @@
-+======================================================================================+
-1/23/24 - Connected the MongoDB database, successfully runs a local server - AJOHNSON
-1/23/24 - Fetched data from the Spoonacular API. - AJOHNSON
-1/24/24 - Implemented REACT in the project. - AJOHNSON
-1/27/24 - Implemented the login and register account logic. - AJOHNSON
-1/27/24 - Implemented logging on login and register attempts - AJOHNSON
-1/27/24 - Added complex password logic - AJOHNSON
-+======================================================================================+
-
