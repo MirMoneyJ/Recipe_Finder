@@ -22,6 +22,14 @@ Project Structure:
 - styles: CSS stylesheets for the project.
 
 Prerequisties:
+{
+NOTE: Watch these videos to properly configure MongoDB and Node.js on Windows:
+
+https://www.youtube.com/watch?v=gB6WLkSrtJk&t=488s
+https://www.youtube.com/watch?v=06X51c6WHsQ 
+}
+
+
 - Node.js
 - MongoDB
 - MongoDB Compass
