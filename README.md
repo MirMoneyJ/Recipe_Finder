@@ -14,7 +14,7 @@ Project Structure:
 - logs: Directory for log files. Specifcally for login/register authentication. 
 - models: Data model which holds the User schema.
 - public: Folder for the HTML files.
-- push.gitignore: Files to ignore when pushing to Git.
+- .gitignore: Files to ignore when pushing to Git.
 - README.md: This documentation file.
 - routes: Routing logic for web application.
 - scripts: Script logic for web application.
