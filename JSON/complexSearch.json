@@ -1,6 +1,7 @@
 {
   "results": [
     {
+<<<<<<< HEAD
       "id": 662917,
       "title": "Tasty Easy Meatloaf",
       "image": "https://spoonacular.com/recipeImages/662917-312x231.jpg",
@@ -35,9 +36,73 @@
       "title": "Chili con Carne that'll make your taste buds go silly",
       "image": "https://spoonacular.com/recipeImages/1697611-312x231.jpg",
       "imageType": "jpg"
+=======
+      "id": 1096014,
+      "title": "Spaghetti Squash Boats",
+      "image": "https://spoonacular.com/recipeImages/1096014-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 661094,
+      "title": "Spicy Eggplant Spaghetti",
+      "image": "https://spoonacular.com/recipeImages/661094-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 654292,
+      "title": "Oyster or Clam Spaghetti",
+      "image": "https://spoonacular.com/recipeImages/654292-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 655853,
+      "title": "Pesto Zucchini \"Spaghetti",
+      "image": "https://spoonacular.com/recipeImages/655853-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 452116,
+      "title": "Rustic Red Wine Spaghetti",
+      "image": "https://spoonacular.com/recipeImages/452116-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 660804,
+      "title": "Spaghetti squash and meatballs",
+      "image": "https://spoonacular.com/recipeImages/660804-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 660822,
+      "title": "Spaghetti With Cape Hake Sauce",
+      "image": "https://spoonacular.com/recipeImages/660822-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 660835,
+      "title": "Spaghetti With Pesto Trapanese",
+      "image": "https://spoonacular.com/recipeImages/660835-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 32579,
+      "title": "Tuna Spaghetti With Fava Beans",
+      "image": "https://spoonacular.com/recipeImages/32579-312x231.jpg",
+      "imageType": "jpg"
+    },
+    {
+      "id": 631732,
+      "title": "Caponata Style Celery Spaghetti",
+      "image": "https://spoonacular.com/recipeImages/631732-312x231.png",
+      "imageType": "png"
+>>>>>>> 81c478984876fc0e45c78a7c1e41631ff37dae35
     }
   ],
   "offset": 0,
   "number": 10,
+<<<<<<< HEAD
   "totalResults": 6
+=======
+  "totalResults": 22
+>>>>>>> 81c478984876fc0e45c78a7c1e41631ff37dae35
 }
