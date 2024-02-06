@@ -1,0 +1,33 @@
+.ingredient-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin: 10px 0;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .ingredient-card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  
+  .ingredient-icon img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .ingredient-info h3, .ingredient-info p {
+    margin: 0;
+  }
+  
+  .ingredient-name {
+    font-weight: bold;
+  }
+  
+  .ingredient-quantity {
+    font-style: italic;
+  }
+  

@@ -23,11 +23,11 @@ const logger = winston.createLogger({
 function handleResponseAndLog(res, successMessage, errorMessage, logMessage) {
     if (successMessage) {
         res.status(200).send(successMessage);
-        logger.info(logMessage);
-    } else {
+    } else if (errorMessage) {
         res.status(400).send(errorMessage);
-        logger.info(logMessage);
     }
+
+    logger.info(logMessage);
 }
 
 router.post('/', async (req, res) => {
@@ -36,8 +36,8 @@ router.post('/', async (req, res) => {
 
     try {
         if (!username || !password) {
-            // Simulate an error for invalid data
-            throw new Error('Invalid data provided for registration');
+            handleResponseAndLog(res, null, 'Invalid data provided for registration', `Invalid data for registration attempt\non ${timestamp}`);
+            return;
         }
 
         // Check if the user already exists
@@ -48,22 +48,16 @@ router.post('/', async (req, res) => {
             return;
         }
 
-        // Hash the password before saving it to the database
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        // Create a new user object
-        const newUser = new User({ username, password: hashedPassword });
-
-        // Save the user to the database
-        await newUser.save();
-
-        // Log the registration AFTER saving to the database
+        const hashedPassword = await bcrypt.hash(password, 10); // Hash the password before saving it to the database
+        const newUser = new User({ username, password: hashedPassword });       
+        await newUser.save(); // Save the user to the database
         handleResponseAndLog(res, 'User registered successfully', null, `User Registered Successfully: ${username}\non ${timestamp}`);
+
     } catch (error) {
         // Log the error
         logger.error(`Error during registration: ${error.message} \nStack trace: ${error.stack} \non ${timestamp}`);
         res.status(500).send('Error registering user');
-    }
+    } 
 });
 
 module.exports = router;
